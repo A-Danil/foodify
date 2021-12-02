@@ -1,0 +1,15 @@
+.favourite {
+  &__dishes {
+    padding-top: $gap * 3;
+    padding-bottom: $gap * 2;
+    display: flex;
+    flex-wrap: wrap;
+    gap: $gap;
+    justify-content: center;
+  }
+
+  &__dish {
+    display: flex;
+    justify-content: center;
+  }
+}

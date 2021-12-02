@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  // box-sizing: border-box;
+}
+
+html {
+  font-size: $font-size;
+}
+
+body {
+  font-size: $font-size;
+  font-family: $font-main;
+  max-width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.container {
+  padding: 0 100px;
+  margin-right: auto;
+  margin-left: auto;
+
+  @include xs-min {
+    max-width: 540px;
+  }
+
+  @include sm-min {
+    max-width: 720px;
+  }
+
+  @include md-min {
+    max-width: 960px;
+  }
+
+  @include lg-min {
+    max-width: 1140px;
+  }
+}
+
+.active {
+  box-shadow: 0px 0px 7px 0px $color-dark-gray;
+}

@@ -1,0 +1,65 @@
+header {
+  background-color: $color-gray;
+  font-family: $font-header;
+  font-weight: 600;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  &__nav {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+
+    & li {
+      background-color: transparent;
+      transition: 0.5s;
+
+      &:hover {
+        background-color: $color-dark-gray;
+
+        & a {
+          color: $color-gray;
+        }
+      }
+    }
+
+    & li a {
+      text-decoration: none;
+      color: $color-black;
+      padding: $gap;
+      display: block;
+      transition: 0.5s;
+    }
+  }
+}
+
+.custom-dish {
+  position: absolute;
+  right: $gap;
+  border-radius: 4px;
+  overflow: hidden;
+
+  &:hover {
+    & button {
+      background-color: $color-dark-gray;
+      color: $color-gray;
+    }
+  }
+}
+
+.custom-btn {
+  padding: $gap;
+  border: none;
+  background-color: transparent;
+  color: $color-black;
+  font-family: $font-header;
+  font-weight: 600;
+  font-size: $font-size;
+  transition: 0.5s;
+}

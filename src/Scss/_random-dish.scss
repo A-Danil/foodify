@@ -1,0 +1,94 @@
+.random-dish {
+  padding: ($gap * 3) 0 $gap 0;
+}
+
+.dish {
+  &__card {
+    width: 500px;
+    margin: 0 auto;
+    padding: $gap;
+    border-radius: 15px;
+    background-color: $color-gray;
+    box-shadow: 0px 0px 20px 5px $color-dark-gray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__img {
+    width: 300px;
+    height: 300px;
+    margin-bottom: $gap;
+    border-radius: 10px;
+    overflow: hidden;
+
+    &:hover {
+      & img {
+        transform: scale(1.2);
+      }
+    }
+
+    & img {
+      width: 100%;
+      border-radius: 10px;
+      transition: 0.5s;
+    }
+  }
+
+  &__description {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 450px;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    font-family: $font-header;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1.2rem;
+    letter-spacing: 0.4rem;
+    position: relative;
+
+    &::after {
+      position: absolute;
+      content: "";
+      width: 100%;
+      border-bottom: 2px solid black;
+      bottom: -5px;
+      left: 0;
+    }
+  }
+
+  &__instruction {
+    line-height: 1.6rem;
+    letter-spacing: 0.01rem;
+    margin-bottom: $gap;
+
+    &::first-letter {
+      margin-left: $gap;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+  }
+
+  &__youtube {
+    opacity: 0.6;
+    transition: 0.5s;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    & a {
+      background-color: $color-red;
+      padding: 10px 20px;
+      border-radius: 15px;
+      text-decoration: none;
+      color: $color-white;
+      display: block;
+    }
+  }
+}

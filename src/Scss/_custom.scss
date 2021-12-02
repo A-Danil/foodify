@@ -1,0 +1,79 @@
+.custom {
+  position: absolute;
+  bottom: 0;
+  transform: translate(0px, 100%);
+  background-color: $color-gray-transition;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+
+  &__form {
+    display: flex;
+    padding: 10px $gap;
+    margin-top: $gap * 5;
+    width: 450px;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: column;
+    background-color: $color-gray;
+    border-radius: 15px;
+
+    & h3 {
+      margin: $gap 0;
+      text-transform: uppercase;
+      text-align: center;
+      letter-spacing: 0.4rem;
+    }
+  }
+
+  &__inp {
+    display: flex;
+    flex-direction: column;
+    padding: 0 $gap;
+  }
+}
+
+.form-title,
+.form-descripton {
+  letter-spacing: 0.1rem;
+  padding: 5px;
+  border: 1px solid $color-dark-gray;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.form-btn {
+  background-color: $color-dark-gray;
+  padding: 5px $gap;
+  border-radius: 4px;
+  font-size: 16px;
+  border: none;
+  margin-top: $gap;
+  cursor: pointer;
+
+  &:hover {
+    border: 1px solid $color-black;
+  }
+}
+
+.close {
+  position: absolute;
+  bottom: 0;
+  transform: translate(0, 100%);
+  z-index: 3;
+  padding-top: 70px;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+
+  & span {
+    background-color: $color-gray;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    border-radius: 50%;
+    color: $color-black;
+    font-weight: normal;
+  }
+}

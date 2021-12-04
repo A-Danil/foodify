@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/foodify/static/css/main.4fab2611.chunk.css",
-    "main.js": "/foodify/static/js/main.e8517af8.chunk.js",
-    "main.js.map": "/foodify/static/js/main.e8517af8.chunk.js.map",
+    "main.css": "/foodify/static/css/main.bdbffb16.chunk.css",
+    "main.js": "/foodify/static/js/main.06ccc1a4.chunk.js",
+    "main.js.map": "/foodify/static/js/main.06ccc1a4.chunk.js.map",
     "runtime-main.js": "/foodify/static/js/runtime-main.bec95492.js",
     "runtime-main.js.map": "/foodify/static/js/runtime-main.bec95492.js.map",
     "static/js/2.bc7d11eb.chunk.js": "/foodify/static/js/2.bc7d11eb.chunk.js",
     "static/js/2.bc7d11eb.chunk.js.map": "/foodify/static/js/2.bc7d11eb.chunk.js.map",
     "index.html": "/foodify/index.html",
-    "static/css/main.4fab2611.chunk.css.map": "/foodify/static/css/main.4fab2611.chunk.css.map",
+    "static/css/main.bdbffb16.chunk.css.map": "/foodify/static/css/main.bdbffb16.chunk.css.map",
     "static/js/2.bc7d11eb.chunk.js.LICENSE.txt": "/foodify/static/js/2.bc7d11eb.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.bec95492.js",
     "static/js/2.bc7d11eb.chunk.js",
-    "static/css/main.4fab2611.chunk.css",
-    "static/js/main.e8517af8.chunk.js"
+    "static/css/main.bdbffb16.chunk.css",
+    "static/js/main.06ccc1a4.chunk.js"
   ]
 }

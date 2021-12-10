@@ -2,20 +2,30 @@ import React from "react";
 
 function Like(props){
   const favouriteDish = props.getInfoRecipe;
-  // console.log("Like props",favouriteDish)
-  // console.log("Id meal",favouriteDish.idMeal)
-  const {text, className} = props;
+  const {text, className, } = props;
+  const currentId = favouriteDish.idMeal;
+  const setLikes = props.setLikes
+
 
   function getFavoutites(){
     return JSON.parse(localStorage.getItem('favourites'))
   };
 
+
   function addToFav(){
     let fav = getFavoutites() || [];
 
+    fav.map((dish, index) => {
+      if(dish.idMeal === currentId){
+        return fav.splice(index, 1)
+      }
+    })
+
     fav.push(favouriteDish);
     localStorage.setItem('favourites', JSON.stringify(fav))
+    setLikes(true);
   }
+
 
   return(
       <div className={className}>

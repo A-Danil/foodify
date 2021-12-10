@@ -21,6 +21,10 @@ body {
   margin-right: auto;
   margin-left: auto;
 
+  @include xs {
+    padding: 0 $gap;
+  }
+
   @include xs-min {
     max-width: 540px;
   }
@@ -40,4 +44,89 @@ body {
 
 .active {
   box-shadow: 0px 0px 7px 0px $color-dark-gray;
+}
+
+.to-top {
+  position: fixed;
+  right: $gap;
+  bottom: $gap;
+  width: $gap * 2;
+  height: $gap * 2;
+  background-color: $color-dark-gray;
+  border-radius: $gap / 2;
+  text-align: center;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: 0.5s;
+
+  @include xs {
+    right: $gap / 2;
+  }
+
+  @media (pointer: coarse) {
+    bottom: 15px;
+    &:active {
+      opacity: 1;
+
+      & span {
+        bottom: 15px;
+      }
+    }
+  }
+
+  @media (pointer: fine) {
+    &:hover {
+      opacity: 1;
+
+      & span {
+        color: $color-black;
+        bottom: 15px;
+      }
+    }
+  }
+
+  & span {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0px);
+    bottom: 3px;
+    color: $color-white;
+    transition: 0.5s;
+  }
+}
+
+.delete {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: $gap;
+  margin-bottom: -$gap * 2;
+  cursor: pointer;
+
+  @include xs {
+    justify-content: center;
+  }
+
+  & div {
+    font-size: 1.3rem;
+    width: 40px;
+    height: 40px;
+    background-color: $color-dark-gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    transition: 0.5s;
+
+    @media (pointer: fine) {
+      &:hover {
+        background-color: $colo-red-light;
+      }
+    }
+
+    @media (pointer: coarse) {
+      &:active {
+        background-color: $colo-red-light;
+      }
+    }
+  }
 }

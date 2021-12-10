@@ -1,9 +1,7 @@
 import React from "react";
 
 function DishCard(props){
-  console.log("вот что передалось DishCard", props)
-
-  const { strMeal,strMealThumb, strInstructions, strYoutube, className, idMeal} = props;
+  const { strMeal,strMealThumb, strInstructions, strYoutube, className} = props;
 
   return(
     <section className={className}>

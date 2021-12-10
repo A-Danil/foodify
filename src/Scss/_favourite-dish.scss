@@ -1,3 +1,7 @@
+.favourites {
+  position: relative;
+}
+
 .favourite {
   &__dishes {
     padding-top: $gap * 3;
@@ -11,5 +15,21 @@
   &__dish {
     display: flex;
     justify-content: center;
+
+    @include sm-xs {
+      width: 400px;
+    }
+
+    @include xs {
+      width: 300px;
+    }
   }
+}
+
+.no-recipe {
+  font-family: $font-header;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 1.2rem;
+  letter-spacing: 0.1rem;
 }

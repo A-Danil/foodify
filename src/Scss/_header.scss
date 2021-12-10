@@ -10,15 +10,33 @@ header {
   justify-content: center;
   position: relative;
 
+  @include md {
+    justify-content: space-between;
+  }
+
+  @include xs {
+    flex-direction: column;
+  }
+
   &__nav {
     display: flex;
     list-style: none;
     justify-content: center;
     align-items: center;
 
+    @include xs {
+      flex-direction: column;
+      width: 100vw;
+    }
+
     & li {
       background-color: transparent;
       transition: 0.5s;
+
+      @include xs {
+        width: 100%;
+        text-align: center;
+      }
 
       &:hover {
         background-color: $color-dark-gray;
@@ -35,15 +53,49 @@ header {
       padding: $gap;
       display: block;
       transition: 0.5s;
+
+      @include sm {
+        padding: $gap ($gap / 4);
+      }
     }
   }
 }
 
-.custom-dish {
+.fav {
+  position: relative;
+}
+
+.new {
   position: absolute;
+  color: $color-gray;
+  right: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: $color-red;
+
+  @include xs {
+    right: 10%;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+}
+
+.custom-dish {
   right: $gap;
   border-radius: 4px;
   overflow: hidden;
+
+  @include xs-min {
+    position: absolute;
+  }
+
+  @include xs {
+    text-align: center;
+    width: 100vw;
+  }
 
   &:hover {
     & button {
@@ -62,4 +114,12 @@ header {
   font-weight: 600;
   font-size: $font-size;
   transition: 0.5s;
+
+  @include sm {
+    padding: $gap ($gap / 4);
+  }
+
+  @include xs {
+    width: 100%;
+  }
 }

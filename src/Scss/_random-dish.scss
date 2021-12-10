@@ -1,10 +1,19 @@
 .random-dish {
   padding: ($gap * 3) 0 $gap 0;
+
+  @include sm-xs {
+    width: 400px;
+    margin: 0 auto;
+  }
+
+  @include xs {
+    width: 300px;
+    margin: 0 auto;
+  }
 }
 
 .dish {
   &__card {
-    width: 500px;
     margin: 0 auto;
     padding: $gap;
     border-radius: 15px;
@@ -13,9 +22,22 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @include sm-min {
+      width: 500px;
+    }
+
+    @include sm-xs {
+      max-width: 400px;
+      padding: $gap / 2;
+    }
+
+    @include xs {
+      padding: $gap / 2;
+    }
   }
   &__img {
-    width: 300px;
+    max-width: 300px;
     height: 300px;
     margin-bottom: $gap;
     border-radius: 10px;
@@ -51,6 +73,10 @@
     font-size: 1.2rem;
     letter-spacing: 0.4rem;
     position: relative;
+
+    @include xs {
+      font-size: 1rem;
+    }
 
     &::after {
       position: absolute;

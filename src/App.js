@@ -1,19 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import Header from './Components/Header/Header';
 import './Scss/App.scss';
-import { BrowserRouter as Router, Routes, Route, } from "react-router-dom";
+import { HashRouter as Router, Routes, Route, } from "react-router-dom";
 import RandomDish from './Components/RandomDish';
 import Favourites from './Components/Favourites';
 import Loader from './Components/Loader';
+import ReactDOM from 'react-dom';
+import Modal from './Components/Modal/Modal';
 
 
 function App() {
-  const startRecipe = {meals:[{}]};
 
-  const [recipe, setRecipe] = useState(startRecipe);
-  const [loading, setLoading] = useState(false);
-
-  console.log('рецепты', recipe);
+  const [modalActive, setModalActive] = useState(false);
+  const [recipe, setRecipe] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [likes, setLikes] = useState(false);
 
   const getRecipeUrl = 'https://www.themealdb.com/api/json/v1/1/random.php';
 
@@ -26,27 +27,27 @@ function App() {
     .then(res => res.json())
     .then(
       (result) => {
-        setLoading(true);
         setRecipe(result);
+        setLoading(false);
       },
       (error) => {
         setLoading(true);
-        console.log(error);
+        console.log(error)
       }
       )
   }
 
-
   return (
     loading ?
+    <Loader/> :
     (<Router>
-        <Header />
-        <Routes>
-          <Route exact path="/" element={<RandomDish randomRecipe={recipe ? recipe : startRecipe} getRandomRecipe={getRandomRecipe} />} />
-          <Route path="/favourites" element={<Favourites />} />
-        </Routes>
+      <Header active={modalActive} setActive={setModalActive} likes={likes} setLikes={setLikes}/>
+      {ReactDOM.createPortal(<Modal active={modalActive} setActive={setModalActive}></Modal>, document.getElementById('modal'))}
+      <Routes>
+        <Route path="/" element={<RandomDish randomRecipe={recipe} getRandomRecipe={getRandomRecipe} likes={likes} setLikes={setLikes}/>} />
+        <Route path="/favourites" element={<Favourites active={modalActive} setActive={setModalActive}/>} />
+      </Routes>
     </Router>)
-    : <Loader/>
   );
 }
 

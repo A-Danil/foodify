@@ -5,9 +5,9 @@ import Like from "./Buttons/Like";
 
 
 function RandomDish(props){
-  console.log("вот что передалось", props.randomRecipe.meals[0])
   const { strMeal,strMealThumb, strInstructions, strYoutube, idMeal} = props.randomRecipe.meals[0];
   const getNewRecipe = props.getRandomRecipe;
+  const setLikes = props.setLikes;
 
   return(
     <>
@@ -27,6 +27,7 @@ function RandomDish(props){
                 />
                 <Like
                   getInfoRecipe={props.randomRecipe.meals[0]}
+                  setLikes={setLikes}
                   text={'Like'}
                   className={'like'}
                 />
